@@ -1,131 +1,138 @@
 import {
-  SiNextdotjs,
   SiReact,
-  SiRedux,
-  SiTailwindcss,
-  SiTypescript,
+  SiPhp,
+  SiCpanel,
+  SiJquery,
+  SiBootstrap,
+  SiGatsby,
+  SiContentful,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiRuby,
+  SiRubyonrails,
 } from "react-icons/si";
-import { FaStripe } from "react-icons/fa";
 import Project from "./Project";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
+
+
 
 type Props = {};
 
-export default function Projects({}: Props) {
+export default function Projects({ }: Props) {
+  
+    const { t } = useTranslation();
+
+  
   const projects = [
     {
-      projectDemo: "https://pathfinding-visualizer-alpha.vercel.app/",
+      projectDemo: "https://fitness.yottaline.com",
       projectImage: (
         <Image
           width={1400}
           height={1000}
-          src="/pathfinding-project.png"
-          alt="pathfinding project on different devices"
+          src="/images/almacenter-image.webp"
+          alt="fitness user interface"
           className="w-full h-full"
         />
       ),
-      projectName: "Pathfinding Visualizer",
+      projectName: t("projectone"),
       projectDescription:
-        " A beautiful pathfinding visualization web app that supports various pathfinding algorithms, maze generation algorithms, obstacles, weights, and more.",
+       t('projects.Project-1 description'),
+      projectTools: [
+        <SiPhp color="#8993be" key={0} />,
+        <SiCpanel fill="#ff6c2c" key={1} />,
+        <SiJquery fill="#0092ef" key={2} />,
+        <SiBootstrap color="#712cf9" key={3} />,
+      ],
+    },
+    {
+      projectDemo: "https://fitness.yottaline.com/m_cpanel/",
+      projectImage: (
+        <Image
+          width={1400}
+          height={1000}
+          src="/images/gym-admin-system-back-end-end.webp"
+          alt="gym admin system"
+          className="w-full h-full"
+        />
+      ),
+      projectName: t('projecttwo'),
+      projectDescription:
+       t('projects.Project-2 description'),
+      projectTools: [
+        <SiPhp color="#8993be" key={0} />,
+        <SiCpanel fill="#ff6c2c" key={1} />,
+        <SiJquery fill="#0092ef" key={2} />,
+        <SiBootstrap color="#712cf9" key={3} />,
+      ],
+    },
+
+    {
+      projectDemo: "https://awesome-varahamihira-16b9b2.netlify.app/",
+      projectImage: (
+        <Image
+          width={1400}
+          height={1000}
+          src="/images/onlineMenu.webp"
+          alt="online menu"
+          className="w-full h-full"
+        />
+      ),
+      projectName: t("projectthree"),
+      projectDescription:
+        t('projects.Project-3 description'),
       projectTools: [
         <SiReact color="#61DBFB" key={0} />,
-        <SiRedux fill="#764abc" key={1} />,
-
-        <SiTailwindcss color="#38bdf8" key={2} />,
+        <SiGatsby fill="#764abc" key={1} />,
+        <SiContentful key={2} />,
       ],
     },
     {
-      projectDemo: "https://sorting-visualizer-arifm6.vercel.app//",
+      projectDemo: "https://ahmadalarif.github.io/connect4/",
       projectImage: (
         <Image
           width={1400}
           height={1000}
-          src="/sorting-project.png"
-          alt="sorting project"
+          src="/images/connect-4.webp"
+          alt="connect four game"
           className="w-full h-full"
         />
       ),
-      projectName: "Sorting Visualizer",
+      projectName: t("projectfour"),
       projectDescription:
-        " A beautiful sorting visualization web app that supports various sorting algorithms, animation speeds, array sizes, and more.",
+        t('projects.Project-4 description'),
       projectTools: [
-        <SiTypescript
-          className="bg-white rounded-md"
-          color="#007acc"
-          key={0}
-        />,
-        <SiNextdotjs fill="white" key={1} />,
-
-        <SiTailwindcss color="#38bdf8" key={2} />,
+        <SiHtml5 color="#e34c26" key={0} />,
+        <SiCss3 color="#264de4" key={1} />,
+        <SiJavascript color="#F0DB4F" key={3} />,
       ],
     },
-
     {
-      projectDemo: "https://amazon-clone-arifm6.vercel.app/",
+      projectDemo: "https://raedahfinance.onrender.com",
       projectImage: (
         <Image
           width={1400}
           height={1000}
-          src="/amazon-project.png"
-          alt="amazon project on different devices"
+          src="/images/readah.webp"
+          alt="raedah"
           className="w-full h-full"
         />
       ),
-      projectName: "Amazon Clone",
+      projectName: t("projectfive"),
       projectDescription:
-        ' A simple mock amazon clone that allows simulates some of the experience found on amazon. This website allows user login, checkout (including payment processing), and more! Note your computer may give a security error because the website name includes "amazon" which is flagged by most web browsers',
+        t('projects.Project-5 description'),
       projectTools: [
-        <SiNextdotjs fill="white" key={0} />,
-        <SiRedux fill="#764abc" key={1} />,
-        <Image
-          width={48}
-          height={48}
-          src="/firebase-logo.png"
-          alt="Firebase"
-          key={2}
-        />,
-        <SiTailwindcss color="#38bdf8" key={3} />,
-        <Image
-          width={48}
-          height={48}
-          src="/next-auth-logo.png"
-          alt="Next-Auth"
-          key={4}
-        />,
-      ],
-    },
-    {
-      projectDemo: "https://netflix-clone-45ea5.web.app/",
-      projectImage: (
-        <Image
-          width={1400}
-          height={1000}
-          src="/netflix-project.png"
-          alt="Netflix project on different devices"
-          className="w-full h-full"
-        />
-      ),
-      projectName: "Netflix Clone",
-      projectDescription:
-        " A simple mock netflix clone that simulates some of the experiences found on netflix. This includes using an API to display movie recommendations, user account creation and login, user subscription, and more!",
-      projectTools: [
-        <SiReact color="#61DBFB" key={0} />,
-        <SiRedux fill="#764abc" key={1} />,
-        <Image
-          width={48}
-          height={48}
-          src="/firebase-logo.png"
-          alt="Firebase"
-          key={2}
-        />,
-        <FaStripe fill="#008cdd" key={3} />,
+        <SiRuby color="#ba2121" key={0} />,
+        <SiRubyonrails color="#d30001" key={1} />,
       ],
     },
   ];
   return (
     <article className="relative h-screen pt-20 overflow-hidden">
-      <h3 className="sectionHeading ">Projects</h3>
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 h-[calc(100vh_-_8rem)] scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
+      <h3 className="sectionHeading ">{t("projects.Projects title")}</h3>
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20  scrollbar-thin  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {projects.map((project, i) => {
           return (
             <Project
@@ -141,7 +148,7 @@ export default function Projects({}: Props) {
           );
         })}
       </div>
-      <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[50vh] -skew-y-12"></div>
+      <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12"></div>
     </article>
   );
 }

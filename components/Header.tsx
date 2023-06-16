@@ -3,6 +3,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import { FiMail } from "react-icons/fi";
+import { useTranslation } from "next-i18next";
+
 type Props = {};
 
 export default function Header({}: Props) {
@@ -13,7 +15,9 @@ export default function Header({}: Props) {
   };
   const handleMouseExit = () => {
     setWhatIsHovered(-1);
+    
   };
+    const { t } = useTranslation();
   return (
     <header className="sticky top-0 p-3 sm:p-5 flex items-center justify-between mx-auto max-w-7xl text-white z-10">
       <motion.div
@@ -23,28 +27,21 @@ export default function Header({}: Props) {
         className="flex items-center transition-colors duration-1000"
       >
         <SocialIcon
-          url="https://www.linkedin.com/in/ahmadmarif/"
+          url="https://www.linkedin.com/in/ahmadalarif"
+          target="_blank"
           fgColor={`${whatIsHovered === 0 ? "#F7AB0A" : "gray"}`}
           bgColor="transparent"
           onMouseEnter={() => handleMouseEnter(0)}
           onMouseLeave={() => handleMouseExit()}
         />
         <SocialIcon
-          url="https://github.com/arifm6"
+          url="https://github.com/ahmadalarif"
+          target="_blank"
           fgColor={`${whatIsHovered === 1 ? "#F7AB0A" : "gray"}`}
           bgColor="transparent"
           onMouseEnter={() => handleMouseEnter(1)}
           onMouseLeave={() => handleMouseExit()}
         />
-        {/**
-        <SocialIcon
-          url=""
-          fgColor={`${whatIsHovered === 2 ? "#F7AB0A" : "gray"}`}
-          bgColor="transparent"
-          onMouseEnter={() => handleMouseEnter(2)}
-          onMouseLeave={() => handleMouseExit()}
-        />
-         */}
       </motion.div>
       <Link href="#contact">
         <motion.div
@@ -56,17 +53,18 @@ export default function Header({}: Props) {
           onMouseLeave={() => handleMouseExit()}
         >
           <FiMail
-            className={`cursor-pointer bg-transparent text-2xl ${
+            className={`cursor-pointer bg-transparent text-2xl m-2 ${
               whatIsHovered === 3 ? "text-[#F7AB0A]" : "text-gray-400"
             }`}
           />
-          <p
+          <div
             className={`hidden sm:inline-flex text-sm uppercase ${
               whatIsHovered === 3 && "text-[#F7AB0A]"
             }`}
           >
-            Contact Me!
-          </p>
+            {t("contact.Contact me")}
+          </div>
+          {"  "}
         </motion.div>
       </Link>
     </header>

@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  @font-face {
+    font-family: 'BPdotsUnicase';
+    src: url('/fonts/BPdotsUnicase.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+    font-style: normal;
+
+  }
+}
+
+
 *,
 ::before,
 ::after {
@@ -16,10 +29,10 @@
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#FFE55C]/40 hover:text-[#FFE55C]/40;
   }
   .sectionHeading {
-    @apply mb-4 uppercase tracking-[20px] text-gray-500 text-2xl text-center;
+    @apply mb-10 uppercase tracking-[1px] text-gray-500 text-2xl text-center;
   }
   .contactInput {
-    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-[#F7AB0A] placeholder-gray-500 transition-all focus:border-[#F7AB0A] focus:text-[#F7AB0A] hover:border-[#F7AB0A];
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-14 py-4 border-[#242424] text-[#F7AB0A] placeholder-gray-500 transition-all focus:border-[#F7AB0A] focus:text-[#F7AB0A] hover:border-[#F7AB0A] text-start;
   }
   .skill-size {
     @apply w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 xl:w-32 xl:h-32 scale-50;
@@ -38,3 +51,5 @@
 .name-hover:hover + .phonetic-name {
   display: inline-block;
 }
+ 
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Cairo&display=swap');

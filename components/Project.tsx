@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
 import React from "react";
+import {  useTranslation } from "next-i18next";
+
+
+
 
 type Props = {
   projectDemo: string;
@@ -21,6 +24,8 @@ export default function Project({
   projectTools,
   projectDescription,
 }: Props) {
+
+  const { t } = useTranslation();
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -43,21 +48,22 @@ export default function Project({
           {projectImage}
         </motion.div>
         <h3 className=" absolute scale-0 group-hover:scale-100 p-4 border border-gray-300 rounded-full bg-gray-500 bg-opacity-30 text-3xl duration-200 text-center whitespace-nowrap ">
-          Link To Project
+          {t("projects.Project link")}
         </h3>
       </motion.a>
       <h4 className="text-xl sm:text-4xl font-semibold text-center">
         <span className="underline decoration-[#FFE55C]/50">
-          Project {projectNumber} of {numberOfProjects}:
+          {t("projects.Project number")} {projectNumber}{" "}
+          {t("projects.Project of")} {numberOfProjects}:
         </span>{" "}
         {projectName}
       </h4>
       <div className="flex items-center space-x-4 projectTools ">
         {projectTools}
       </div>
-      <p className="text-sm max-w-[80vw] overflow-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
+      <div className="text-lg text-center md:text-start">
         {projectDescription}
-      </p>
+      </div>
     </motion.div>
   );
 }

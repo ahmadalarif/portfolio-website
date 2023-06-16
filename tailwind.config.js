@@ -9,7 +9,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        BPdotsUnicaseSquareLight: 'BPdotsUnicaseSquareLight',
+      }
+    },
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [require("tailwind-scrollbar"),
+    "prettier-plugin-svelte",
+    "prettier-plugin-organize-imports",
+    'prettier-plugin-tailwindcss'],
+  "pluginSearchDirs": false
 };

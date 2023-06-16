@@ -6,17 +6,24 @@ import {
   IoIosMore,
   IoLogoCss3,
   IoLogoJavascript,
-  IoLogoPython,
 } from "react-icons/io";
 import {
   SiTypescript,
   SiReact,
   SiNextdotjs,
   SiPhp,
-  SiAdobephotoshop,
-  SiOpengl,
+  SiExpress,
+  SiRubyonrails,
+  SiElectron,
+  SiMongodb,
+  SiJquery,
+  SiCanva,
+  SiGatsby,
+  SiMysql,
 } from "react-icons/si";
-import Image from "next/image";
+import { DiRubyRough } from "@react-icons/all-files/di/DiRubyRough";
+import {  FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
 
 type Props = {};
 
@@ -38,73 +45,74 @@ export default function Skills({}: Props) {
       skillIcon: <IoLogoJavascript className="bg-[#F0DB4F]" color="#323330" />,
     },
     {
-      toolName: "TS",
-      skillIcon: <SiTypescript className="bg-white" color="#007acc" />,
+      toolName: "Ruby",
+      skillIcon: <DiRubyRough className="bg-white" color="#ba2121" />,
     },
     {
-      toolName: "Python",
-      skillIcon: (
-        <Image
-          fill
-          src="/python-logo.png"
-          alt="Python Logo"
-          className="bg-white"
-        />
-      ),
+      toolName: "Rails",
+      skillIcon: <SiRubyonrails className="bg-white" color="#d30001" />,
     },
     {
-      toolName: "Java",
-      skillIcon: (
-        <Image fill src="/java-logo.png" alt="Java Logo" className="bg-white" />
-      ),
+      toolName: "React",
+      skillIcon: <SiReact color="#61DBFB" />,
     },
     {
-      toolName: "C++",
-      skillIcon: (
-        <Image
-          fill
-          src="/cplusplus-logo.png"
-          alt="C++ Logo"
-          className="bg-white"
-        />
-      ),
+      toolName: "NodeJs",
+      skillIcon: <FaNodeJs color="#43853d" className="bg-white" />,
     },
     {
-      toolName: "C",
-      skillIcon: (
-        <Image fill src="/c-logo.png" alt="C Logo" className="bg-white" />
-      ),
+      toolName: "Express",
+      skillIcon: <SiExpress color="#353535" className="bg-white" />,
     },
+    {
+      toolName: "Mongodb",
+      skillIcon: <SiMongodb color="#00ed64" />,
+    },
+
+    {
+      toolName: "SQL",
+      skillIcon: <SiMysql className=" h-14 w-14 rounded-full" />,
+    },
+    {
+      toolName: "jQuery",
+      skillIcon: <SiJquery color="#0092ef" />,
+    },
+
     {
       toolName: "PHP",
       skillIcon: <SiPhp color="#8993be" />,
     },
+    {
+      toolName: "TS",
+      skillIcon: <SiTypescript className="bg-white" color="#007acc" />,
+    },
 
     {
-      toolName: "Git",
+      toolName: "Canva",
+      skillIcon: <SiCanva color="#7300e6" />,
+    },
+
+    {
+      toolName: "GitHub",
       skillIcon: <AiFillGithub className="bg-white" fill="black" />,
     },
 
     {
-      toolName: "React",
-      skillIcon: <SiReact color="#61DBFB" />,
+      toolName: "Git",
+      skillIcon: <FaGitAlt color="#f14e32" />,
     },
     {
       toolName: "Next.js",
       skillIcon: <SiNextdotjs color="black" className="bg-white" />,
     },
     {
-      toolName: "SQL",
-      skillIcon: <Image fill src="/sql-logo.png" alt="SQL Logo" />,
+      toolName: "Gatsby",
+      skillIcon: <SiGatsby fill="#764abc" key={1} />,
     },
 
     {
-      toolName: "Photoshop",
-      skillIcon: <Image fill src="/photoshop-logo.webp" alt="Photoshop Logo" />,
-    },
-    {
-      toolName: "OpenGL",
-      skillIcon: <SiOpengl fill="#283A57" className="bg-white" />,
+      toolName: "ElectronJs",
+      skillIcon: <SiElectron fill="#9feaf9" className="bg-#7f8497" />,
     },
     {
       toolName: "and more!",
@@ -114,11 +122,12 @@ export default function Skills({}: Props) {
   const animationDirection = (i: number) => {
     return i >= 8 ? true : false;
   };
+  const { t }= useTranslation();
   return (
-    <article className="h-screen pt-20 overflow-visible" ref={skillsRef}>
-      <h3 className="sectionHeading">Skills</h3>
-      <div className="flex items-center justify-center h-[calc(100vh_-_8rem)] z-20">
-        <div className="grid grid-cols-4 gap-2 sm:gap-5  ">
+    <article className="h-screen pt-20 overflow-visible mt-1" ref={skillsRef}>
+      <h3 className="sectionHeading">{t("skills.Skills title")}</h3>
+      <div className="flex items-center justify-center h-[calc(100vh_-_7rem)] z-20">
+        <div className="grid grid-cols-4 gap-3 sm:gap-2  ">
           {skills.map((skill, i) => {
             return (
               <Skill

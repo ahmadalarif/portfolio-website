@@ -1,94 +1,98 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { FaWhatsapp } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
+import emailjs from "@emailjs/browser";
+
+
 
 type Props = {};
 
-type Inputs = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
 export default function ContactMe({}: Props) {
-  //state of 0 for not submitted, 1 for submitted, 2 for otherwise for error
-  const [submitted, setSubmitted] = useState(0);
-  const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = async (formData) => {
-    await fetch("api/sendgrid", {
-      method: "post",
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Form submitted");
-        setSubmitted(1);
-      })
-      .catch((error) => {
-        console.log("Error: " + error);
-        setSubmitted(2);
-      });
-  };
+const form = useRef(null);
 
+  const sendEmail = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_ezlq82m",
+        "template_zbps26q",
+        form.current,
+        "aqbRKySxzj9RvzG2-"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+const { t } =  useTranslation();
   return (
-    <div className="h-screen pt-20 overflow-hidden w-[90%] mx-auto">
-      {" "}
-      <h3 className="sectionHeading ">Contact</h3>
-      <div className="flex flex-col items-center justify-start h-[calc(100vh_-_8rem)] space-y-10 text-center md:text-left max-w-7xl px-10 mx-auto overflow-y-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-        <div className="pt-8 flex flex-col items-center justify-evenly space-y-5 2xl:space-y-10 w-full">
-          <h4 className="text-lg sm:text-2xl 2xl:text-4xl font-semibold text-center ">
-            Feel free to ask me anything!
+    <div className="mx-auto h-screen w-[90%] overflow-hidden pt-20">
+      {"  "}
+      <h3 className="sectionHeading ">{t("contact.Contact")}</h3>
+      <div className="mx-auto flex h-[calc(100vh_-_8rem)] max-w-7xl flex-col items-center justify-start space-y-10 overflow-y-scroll px-10 text-center scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 md:text-left">
+        <div className="flex w-full flex-col items-center justify-evenly space-y-5 pt-8 2xl:space-y-10">
+          <h4 className="text-center text-lg font-semibold sm:text-2xl 2xl:text-4xl ">
+            {t("contact.Contact title")}
           </h4>
-          <div className="flex items-center space-x-2 sm:space-x-5 justify-center">
-            <EnvelopeIcon className="w-5 h-5 sm:w-7 sm:h-7 animate-pulse text-[#FFE55C]" />
-            <p className="text-sm sm:text-xl 2xl:text-2xl">
-              arifa6@mcmaster.ca
-            </p>
+          <div className="flex items-center justify-center space-x-2 sm:space-x-5">
+            <EnvelopeIcon className="h-5 w-5 animate-pulse text-[#FFE55C] sm:h-7 sm:w-7" />
+            <div className="text-sm sm:text-xl 2xl:text-2xl">
+              alarif3@gmail.com
+            </div>
+          </div>
+          <div className="flex items-center justify-center space-x-2 sm:space-x-5">
+            {"  "}
+            <FaWhatsapp className="h-5 w-5 animate-pulse text-[#FFE55C] sm:h-7 sm:w-7" />
+            {"  "}
+            <a
+              href="https://wa.me/966565606064"
+              className="whatsapp_float"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {"  "}
+              <div className="text-sm sm:text-xl 2xl:text-2xl">
+                {"  "}
+                {t("contact.Contact whatsApp")}
+              </div>
+            </a>
           </div>
         </div>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="w-full max-w-[85vw] flex flex-col space-y-2 sm:max-w-full sm:w-fit mx-auto "
-        >
-          <div className="flex space-x-0 flex-col space-y-2 sm:space-x-2 sm:flex-row sm:space-y-0">
+        <div className="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="mx-auto flex w-full max-w-[85vw] flex-col space-y-2 sm:w-fit sm:max-w-full text-start"
+          >
+            <input className="contactInput " placeholder="Name" name="name" />
+
             <input
-              {...register("name")}
-              className="contactInput"
-              type="text"
-              placeholder="Name"
-            />
-            <input
-              {...register("email")}
-              className="contactInput"
               type="email"
+              className="contactInput ... peer block "
+              name="user_email"
               placeholder="Email"
               required
             />
-          </div>
-          <input
-            {...register("subject")}
-            className="contactInput"
-            type="text"
-            placeholder="Subject"
-          />
-          <textarea
-            {...register("message")}
-            className="contactInput"
-            placeholder="Message"
-            required
-          ></textarea>
-          <button
-            disabled={submitted != 0}
-            type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
-          >
-            {submitted === 0
-              ? "Submit"
-              : submitted === 1
-              ? "Form submitted"
-              : "Error, please try again later"}
-          </button>
-        </form>
+            <p className="invisible mt-2 text-sm text-pink-600 peer-invalid:visible">
+              {t("contact.Contact valid")}
+            </p>
+            <textarea
+              name="message"
+              className="contactInput "
+              placeholder="Message"
+              required
+            ></textarea>
+            <button type="submit" value={"send"} className="rounded-md bg-[#F7AB0A] py-1 px-10 text-lg font-bold text-black ">
+              {t("contact.Contact send")}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
