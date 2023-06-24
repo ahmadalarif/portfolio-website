@@ -24,7 +24,6 @@ export default function Project({
   projectTools,
   projectDescription,
 }: Props) {
-
   const { t } = useTranslation();
   return (
     <motion.div
@@ -32,7 +31,7 @@ export default function Project({
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       viewport={{ once: true }}
-      className="w-screen flex-shrink-0 snap-center flex flex-col space-y-4  items-center justify-start sm:px-20 md:px-44 h-full z-20 "
+      className="z-20 flex h-full w-screen flex-shrink-0 snap-center  flex-col items-center justify-start space-y-5 sm:px-20 md:px-40"
     >
       <motion.a
         initial={{ y: -80, opacity: 0 }}
@@ -42,26 +41,26 @@ export default function Project({
         target="_blank"
         href={projectDemo}
         rel="noopener noreferrer"
-        className="group flex items-center justify-center max-w-[80vw] "
+        className="group flex max-w-[80vw] items-center justify-center "
       >
         <motion.div className="h-[30vh] md:h-[40vh] xl:h-[50vh] ">
           {projectImage}
         </motion.div>
-        <h3 className=" absolute scale-0 group-hover:scale-100 p-4 border border-gray-300 rounded-full bg-gray-500 bg-opacity-30 text-3xl duration-200 text-center whitespace-nowrap ">
+        <h3 className=" absolute scale-0 whitespace-nowrap rounded-full border border-gray-300 bg-gray-500 bg-opacity-30 p-4 text-center text-3xl duration-200 group-hover:scale-100 ">
           {t("projects.Project link")}
         </h3>
       </motion.a>
-      <h4 className="text-xl sm:text-4xl font-semibold text-center">
+      <h4 className="text-center text-xl font-semibold sm:text-4xl" >
         <span className="underline decoration-[#FFE55C]/50">
           {t("projects.Project number")} {projectNumber}{" "}
           {t("projects.Project of")} {numberOfProjects}:
         </span>{" "}
         {projectName}
       </h4>
-      <div className="flex items-center space-x-4 projectTools ">
+      <div className="projectTools flex items-center space-x-4 mb-20">
         {projectTools}
       </div>
-      <div className="text-lg text-center md:text-start">
+      <div className="max-w-[80vw] overflow-scroll text-lg scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
         {projectDescription}
       </div>
     </motion.div>

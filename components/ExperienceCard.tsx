@@ -2,19 +2,14 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { FaGithub, FaReact, FaHtml5 } from "react-icons/fa";
-import { SiNextdotjs, SiPhp, SiTailwindcss } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
 import { IoIosMore, IoLogoCss3, IoLogoJavascript } from "react-icons/io";
 import {
-  SiTypescript,
-  SiReact,
   SiExpress,
   SiRubyonrails,
-  SiElectron,
   SiMongodb,
   SiJquery,
   SiMysql,
-  SiGatsby,
 } from "react-icons/si";
 import { DiRubyRough } from "@react-icons/all-files/di/DiRubyRough";
 import {  FaNodeJs, FaGitAlt } from "react-icons/fa";

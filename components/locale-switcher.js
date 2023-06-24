@@ -16,7 +16,7 @@ export default function LocaleSwitcher () {
                 const { pathname, query, asPath } = router;
                 return (
                     <span key={"locale-" + locale}>
-                        <Link href={{ pathname, query }} as={asPath} locale={locale} className="heroButton font-['Amiri'] text-lg">
+                        <Link href={{ pathname, query }} as={asPath} locale={locale} className="heroButton font-['Cairo'] text-base">
                         
                                 {locale === "en" ? "English" : locale === "ar" ? "عربى" : null}
                             

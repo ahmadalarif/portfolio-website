@@ -7,10 +7,14 @@
     "Contact me": "Contact Me !",
     "Contact": "contact",
     "Contact title": "Let me show you the perfect solution.",
+    "Contact services":"What can i build",
     "Contact send": "Send",
     "Contact whatsApp":"WhatsApp",
-    "Contact valid":"Please provide a valid email address."
-
+    "Contact valid":"Please provide a valid email address.",
+    "Contact message":"Message",
+    "Contact name":"Name",
+    "Contact email":"Email    ",
+    "Contact subject":"Subject"
   },
   "hero":{
     "Hero title":"Software Engineer",
@@ -21,8 +25,19 @@
 
   "about": {
 "About title":"About",
-"About subject":"Here is a brief overview of my background",
- "About description": "Welcome to my web page! I am a full stack web developer with years of experience in creating engaging, dynamic web applications. I am passionate about building functional and user-friendly websites that exceed client expectations. My expertise lies in developing complex web applications using a wide range of front-end and back-end technologies. I have experience in HTML, CSS, JavaScript, React, Angular, Node.js, Express.js, and MongoDB, among others. I thrive in challenging environments and enjoy working collaboratively with clients and other developers to create exceptional web solutions. My approach to web development is centered on the user experience. I believe that a website should be easy to navigate, visually appealing, and optimized for user engagement. I place great emphasis on designing responsive and mobile-friendly websites that perform well across all devices. In addition to my technical skills, I am a strong communicator who takes pride in delivering high-quality work on time and within budget. I am committed to staying up-to-date with the latest trends and technologies in web development, and I am always looking for ways to improve my skills and knowledge. Whether you need a simple website or a complex web application, I am confident that I have the skills and expertise to deliver a high-quality solution. If you are interested in working together, please do not hesitate to get in touch!"
+"About subject":"Brief background overview.",
+ "About description": "Welcome to my web page! As a seasoned full stack web developer, I specialize in creating captivating and interactive web applications. With expertise in HTML, CSS, JavaScript, React, Ruby, Ruby On Rails, Node.js, Express.js, and MongoDB, I am well-equipped to handle complex projects. I thrive in challenging environments, collaborating with clients and fellow developers to craft exceptional web solutions. My user-centric approach focuses on delivering easy-to-navigate, visually appealing, and engaging websites optimized for all devices. With strong communication skills and a commitment to timely and cost-effective results, I stay updated with the latest trends and technologies. Whether you need a simple website or a feature-rich web application, I have the skills and knowledge to meet your requirements. Don't hesitate to reach out if you're interested in working together!",
+  "Web Solutions":"Web Solutions",
+  "Web Solutions description":"Crafting effective websites that are responsive and user-friendly to showcase your business.",
+ "Application Development":"Application Development",
+ "Application Development description":"Tailor-made web applications developed to meet your unique business ideas and requirements.",
+ "UI/UX Design":"UI/UX Design",
+ "UI/UX Design description":"The reliability of UX design will be evident in every visible aspect experienced by the user.",
+ "Startup Solutions":"Startup Solutions",
+ "Startup Solutions description":"Digital solutions tailored to meet your startup,s needs, spanning MVP, website, and app development.",
+ "Mobile Apps":"Mobile Apps",
+ "Mobile Apps description":"Engage your audience with innovative mobile apps built using native and hybrid technologies."
+ 
   
   },
 
@@ -41,8 +56,8 @@
   "projects":{
     "Projects title":"Projects",
     "Project-1 description":"The objective of this system is to provide a convenient and efficient way for gym members to reserve spots in fitness classes offered at the gym. This system is enable members to easily browse through available classes and schedules, and make reservations for the classes they wish to attend.",
-    "Project-2 description":"The gym class booking system  allow gym administrators to manage class schedules, set class capacities, and track attendance. This system is providing real-time updates on class availability and allow for automated waitlist management.",
-    "Project-3 description":"The objective of this online food menu is to provide a user-friendly platform for customers to browse through available food options and place orders for delivery, takeout, or dine-in at a restaurant. The online food menu is offering an easy-to-use interface that is accessible through multiple devices, including desktop computers, tablets, and smartphones.",
+    "Project-2 description":"The gym class booking system  allow gym administrators to manage class schedules, set class capacities, and track attendance. This system is providing real-time updates on class availability and allow for automated waitlist management.  User Name: admin,  Password: admin",
+    "Project-3 description":"The objective of online menu is to provide a user-friendly platform for customers to browse through available food options and place orders for delivery, takeout, or dine-in at a restaurant. The online food menu is offering an easy-to-use interface that is accessible through multiple devices.",
     "Project-4 description":"The objective of a Connect Four game is to provide an engaging and challenging game for players of all ages. The game is easy to learn, but provide enough strategy and depth to keep players engaged and coming back for more.",
     "Project-5 description":"About Page with device and device active admin (Login system for user and admin)for AlRaedah Finance Company Using Ruby On Rails framework with Render for deployment",
     "Project link":"Link To Project",
@@ -50,7 +65,7 @@
     "Project of":"of"
   },
   "projectone":"GYM class booking (user interface - front-end)",
-  "projecttwo":"GYM admin managemnt system",
+  "projecttwo":"GYM admin management system",
   "projectthree":"Online food menu",
   "projectfour":"Connect Four Game",
   "projectfive":"Al Raedah Finance About page"

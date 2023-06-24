@@ -29,7 +29,7 @@ function App ({ Component, pageProps }) {
         font2.className
       }`}
         >
-  <Component {...pageProps} />;
+  <Component {...pageProps} />
   </main>
   )
 }

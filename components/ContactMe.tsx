@@ -2,34 +2,13 @@ import React, { useRef } from "react";
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import { FaWhatsapp } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
-import emailjs from "@emailjs/browser";
 
 
 
 type Props = {};
 
 export default function ContactMe({}: Props) {
-const form = useRef(null);
 
-  const sendEmail = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_ezlq82m",
-        "template_zbps26q",
-        form.current,
-        "aqbRKySxzj9RvzG2-"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
 const { t } =  useTranslation();
   return (
     <div className="mx-auto h-screen w-[90%] overflow-hidden pt-20">
@@ -40,6 +19,7 @@ const { t } =  useTranslation();
           <h4 className="text-center text-lg font-semibold sm:text-2xl 2xl:text-4xl ">
             {t("contact.Contact title")}
           </h4>
+
           <div className="flex items-center justify-center space-x-2 sm:space-x-5">
             <EnvelopeIcon className="h-5 w-5 animate-pulse text-[#FFE55C] sm:h-7 sm:w-7" />
             <div className="text-sm sm:text-xl 2xl:text-2xl">
@@ -64,35 +44,35 @@ const { t } =  useTranslation();
             </a>
           </div>
         </div>
-        <div className="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-          <form
-            ref={form}
-            onSubmit={sendEmail}
-            className="mx-auto flex w-full max-w-[85vw] flex-col space-y-2 sm:w-fit sm:max-w-full text-start"
+        <form
+          target="_blank"
+          action="https://formsubmit.co/alarif3@gmail.com"
+          method="POST"
+          className="mx-auto flex w-fit flex-col space-y-2 "
+        >
+          <div className="flex flex flex-col gap-4 space-x-2 space-x-0 space-y-2 sm:flex-row sm:space-x-2 sm:space-y-0 ">
+            <label className="rounded-lg bg-[#94a3b81a] p-2 py-5 text-start">
+              {t("contact.Contact name")}
+            </label>
+            <input className="contactInput" type="text" name="name" />
+            <label className="rounded-lg rounded-lg bg-[#94a3b81a] p-2 py-5 text-start">
+              {t("contact.Contact email")}
+            </label>
+            <input className="contactInput" type="email" name="email" />
+          </div>
+          <label className="text-start ">{t("contact.Contact subject")}</label>
+          <input className="contactInput" type="text" name="subject" />
+          <label className="p-0 text-start">
+            {t("contact.Contact message")}
+          </label>
+          <textarea className="contactInput" name="message" />
+          <button
+            type="submit"
+            className="rounded-md bg-[#F7AB0A] py-5 px-10 text-lg font-bold text-black "
           >
-            <input className="contactInput " placeholder="Name" name="name" />
-
-            <input
-              type="email"
-              className="contactInput ... peer block "
-              name="user_email"
-              placeholder="Email"
-              required
-            />
-            <p className="invisible mt-2 text-sm text-pink-600 peer-invalid:visible">
-              {t("contact.Contact valid")}
-            </p>
-            <textarea
-              name="message"
-              className="contactInput "
-              placeholder="Message"
-              required
-            ></textarea>
-            <button type="submit" value={"send"} className="rounded-md bg-[#F7AB0A] py-1 px-10 text-lg font-bold text-black ">
-              {t("contact.Contact send")}
-            </button>
-          </form>
-        </div>
+            {t("contact.Contact send")}
+          </button>
+        </form>
       </div>
     </div>
   );
