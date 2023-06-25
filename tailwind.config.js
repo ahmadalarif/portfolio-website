@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        BPdotsUnicaseSquareLight: 'BPdotsUnicaseSquareLight',
+        BPdotsUnicase: 'BPdotsUnicase',
       }
     },
   },
