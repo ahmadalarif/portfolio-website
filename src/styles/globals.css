@@ -39,7 +39,7 @@
   }
 
   .skillIcon {
-    @apply border border-gray-500 w-full h-full rounded-3xl object-scale-down  filter group-hover:grayscale transition duration-300 ease-in-out;
+    @apply border border-gray-500 w-full h-full rounded-3xl object-scale-down filter group-hover:grayscale transition duration-300 ease-in-out;
   }
   .projectTools {
     @apply [&>*]:w-8 [&>*]:h-8 md:[&>*]:w-10 md:[&>*]:h-10 lg:[&>*]:w-12 lg:[&>*]:h-12 [&>*]:object-contain;

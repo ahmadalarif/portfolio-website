@@ -54,7 +54,7 @@ export default function Home() {
       <section id="contact" className="snap-start">
         <ContactMe />
       </section>
-      <Link href="#hero">
+      <Link href="#hero" passHref>
         <footer className="sticky bottom-5 cursor-pointer z-[100] group w-[5rem] mx-auto">
           <div className="flex items-center justify-center mx-auto ">
             <Image

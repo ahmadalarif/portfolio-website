@@ -20,6 +20,10 @@ import {
   SiCanva,
   SiGatsby,
   SiMysql,
+  SiCpanel,
+  SiBootstrap,
+  SiTailwindcss,
+  SiContentful,
 } from "react-icons/si";
 import { DiRubyRough } from "@react-icons/all-files/di/DiRubyRough";
 import {  FaNodeJs, FaGitAlt } from "react-icons/fa";
@@ -57,6 +61,40 @@ export default function Skills({}: Props) {
       skillIcon: <SiReact color="#61DBFB" />,
     },
     {
+      toolName: "Gatsby",
+      skillIcon: <SiGatsby fill="#764abc" key={1} />,
+    },
+    {
+      toolName: "Next.js",
+      skillIcon: <SiNextdotjs color="black" className="bg-white" />,
+    },
+    {
+      toolName: "TS",
+      skillIcon: <SiTypescript className="bg-white" color="#007acc" />,
+    },
+    {
+      toolName: "PHP",
+      skillIcon: <SiPhp color="#8993be" />,
+    },
+    {
+      toolName: "Bootstrap",
+      skillIcon: <SiBootstrap color="#59287a" />,
+    },
+    {
+      toolName: "Tailwindcss",
+      skillIcon: <SiTailwindcss color="#0ea5e9" />,
+    },
+    {
+      toolName: "Contentful",
+      skillIcon: (
+        <SiContentful color="#3ab2e6" colorInterpolation="#ffd75e" className="bg-#f05a65" />
+      ),
+    },
+    {
+      toolName: "ElectronJs",
+      skillIcon: <SiElectron fill="#9feaf9" className="bg-#7f8497" />,
+    },
+    {
       toolName: "NodeJs",
       skillIcon: <FaNodeJs color="#43853d" className="bg-white" />,
     },
@@ -74,17 +112,14 @@ export default function Skills({}: Props) {
       skillIcon: <SiMysql className=" h-14 w-14 rounded-full" />,
     },
     {
+      toolName: "cPannel",
+      skillIcon: (
+        <SiCpanel className=" h-14 w-14 rounded-full" color="#FF6C2C" />
+      ),
+    },
+    {
       toolName: "jQuery",
       skillIcon: <SiJquery color="#0092ef" />,
-    },
-
-    {
-      toolName: "PHP",
-      skillIcon: <SiPhp color="#8993be" />,
-    },
-    {
-      toolName: "TS",
-      skillIcon: <SiTypescript className="bg-white" color="#007acc" />,
     },
 
     {
@@ -101,19 +136,7 @@ export default function Skills({}: Props) {
       toolName: "Git",
       skillIcon: <FaGitAlt color="#f14e32" />,
     },
-    {
-      toolName: "Next.js",
-      skillIcon: <SiNextdotjs color="black" className="bg-white" />,
-    },
-    {
-      toolName: "Gatsby",
-      skillIcon: <SiGatsby fill="#764abc" key={1} />,
-    },
 
-    {
-      toolName: "ElectronJs",
-      skillIcon: <SiElectron fill="#9feaf9" className="bg-#7f8497" />,
-    },
     {
       toolName: "and more!",
       skillIcon: <IoIosMore />,
@@ -124,10 +147,10 @@ export default function Skills({}: Props) {
   };
   const { t }= useTranslation();
   return (
-    <article className="h-screen pt-20 overflow-visible mt-1" ref={skillsRef}>
-      <h3 className="sectionHeading">{t("skills.Skills title")}</h3>
+    <article className="h-screen pt-2 overflow-visible mt-1 " ref={skillsRef}>
+      <h3 className="sectionHeading mt-1">{t("skills.Skills title")}</h3>
       <div className="flex items-center justify-center h-[calc(100vh_-_7rem)] z-20">
-        <div className="grid grid-cols-4 gap-3 sm:gap-2  ">
+        <div className="grid grid-cols-4 gap-3 sm:gap-2">
           {skills.map((skill, i) => {
             return (
               <Skill

@@ -53,22 +53,22 @@ export default function Hero({}: Props) {
           <Cursor cursorColor="#33ff33" cursorStyle="_" />
         </h1>
         <div>
-          <Link href="#about">
+          <Link href="#about" passHref>
             <button className="heroButton text-lg">
               {t("about.About title")}
             </button>
           </Link>
-          <Link href="#experience">
+          <Link href="#experience" passHref>
             <button className="heroButton text-lg">
               {t("experience.Experience")}
             </button>
           </Link>
-          <Link href="#skills">
+          <Link href="#skills" passHref>
             <button className="heroButton text-lg">
               {t("skills.Skills title")}
             </button>
           </Link>
-          <Link href="#projects">
+          <Link href="#projects" passHref>
             <button className="heroButton text-lg">
               {t("projects.Projects title")}
             </button>

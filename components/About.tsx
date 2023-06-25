@@ -48,7 +48,10 @@ export default function About({  }: Props) {
     //   </div>
     // </motion.article>
 
-    <section className="h-full w-full bg-transparent  bg-gray-600 bg-[url('/images/ahmad-about.webp')] bg-fixed bg-center bg-no-repeat pt-4 bg-blend-multiply transition-opacity duration-200 hover:opacity-100">
+    <motion.section className="h-full w-full bg-transparent  bg-gray-600 bg-[url('/images/ahmad-about.webp')] bg-fixed bg-center bg-no-repeat pt-4 bg-blend-multiply transition-opacity duration-200 hover:opacity-100"
+    initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}>
       <h3 className="sectionHeading">{t("about.About title")}</h3>
       <div className="max-w-screen-xs mx-auto py-8 px-10 lg:py-16">
         <div className="mb-0 rounded-lg text-center dark:bg-transparent md:p-1">
@@ -59,7 +62,11 @@ export default function About({  }: Props) {
             {t("about.About description")}
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5">
+        <motion.div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-5"
+        initial={{ x: -400, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1.25 }}
+          viewport={{ once: true }}>
           <div className="mb-2 mt-2 rounded-lg border border-gray-200 bg-gray-50  dark:border-gray-200 dark:bg-transparent md:p-10">
             <div style={{ display: "flex", justifyContent: "center" }}>
               <CgWebsite className=" h-10 w-10 text-blue-800 dark:text-blue-400" />
@@ -115,8 +122,8 @@ export default function About({  }: Props) {
               {t("about.Mobile Apps description")}
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
