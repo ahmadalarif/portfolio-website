@@ -15,7 +15,8 @@ module.exports = {
       }
     },
   },
-  plugins: [require("tailwind-scrollbar"),
+  plugins: [require("tailwind-scrollbar"), 
+  ('tailwindcss-rtl'),
     "prettier-plugin-svelte",
     "prettier-plugin-organize-imports",
     'prettier-plugin-tailwindcss'],

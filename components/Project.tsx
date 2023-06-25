@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import {  useTranslation } from "next-i18next";
-
-
-
+import { useTranslation } from "next-i18next";
 
 type Props = {
   projectDemo: string;
@@ -50,14 +47,14 @@ export default function Project({
           {t("projects.Project link")}
         </h3>
       </motion.a>
-      <h4 className="text-center text-xl font-semibold sm:text-4xl" >
+      <h4 className="text-center text-xl font-semibold sm:text-4xl">
         <span className="underline decoration-[#FFE55C]/50">
           {t("projects.Project number")} {projectNumber}{" "}
           {t("projects.Project of")} {numberOfProjects}:
         </span>{" "}
         {projectName}
       </h4>
-      <div className="projectTools flex items-center space-x-4 mb-20">
+      <div className="projectTools mb-20 flex items-center space-x-4">
         {projectTools}
       </div>
       <div className="max-w-[80vw] overflow-scroll text-lg scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">

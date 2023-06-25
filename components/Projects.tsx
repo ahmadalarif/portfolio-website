@@ -1,10 +1,6 @@
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
-import {
-  AnimatePresence,
-  motion,
-  MotionConfig,
-} from "framer-motion";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import {
   SiReact,
   SiPhp,
@@ -23,14 +19,11 @@ import Project from "./Project";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
 
-
-
 type Props = {};
 
 export default function Projects({}: Props) {
   const { t } = useTranslation();
   let [index, setIndex] = useState(0);
-   
 
   const projects = [
     {
@@ -193,4 +186,4 @@ export default function Projects({}: Props) {
       </div>
     </MotionConfig>
   );
-};
+}
