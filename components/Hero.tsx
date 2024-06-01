@@ -7,21 +7,21 @@ import { useTranslation } from "next-i18next";
 
 
 
-type Props = {};
+// type Props = {};
 
-export default function Hero({}: Props) {
+// export default function Hero({}: Props) {
+  const Hero = () => {
   const { t } = useTranslation();
-
   const [text, count] = useTypewriter({
     words: [
       t("hero.Hero welcome1"),
       t("hero.Hero welcome2"),
       t("hero.Hero welcome3"),
     ],
-    loop: true,
+    loop: false,
     delaySpeed: 1500,
     deleteSpeed: 50,
-    typeSpeed: 50,
+    typeSpeed: 80,
   });
   return (
     <article className="flex h-screen flex-col items-center justify-center overflow-hidden text-center">
@@ -39,18 +39,10 @@ export default function Hero({}: Props) {
         <h2 className=" mt-4 text-sm uppercase tracking-tight text-gray-500 md:tracking-wide  ">
           {t("hero.Hero title")}
         </h2>
-        <h1 className="h-12 w-full px-10 text-2xl font-thin sm:h-24 md:text-4xl lg:text-6xl  2xl:h-1/3  ">
-          <span
-            className="mr-3 "
-            style={{
-              color: "#33ff33",
-              fontFamily: "BPdotsUnicase",
-            }}
-          >
-            {text}
-          </span>
-          <Cursor cursorColor="#33ff33" cursorStyle="_" />
-        </h1>
+        <div className="App">
+          <span>{text}</span>
+          <Cursor cursorColor="red"  />
+        </div>
         <div>
           <Link href="#about" passHref>
             <button className="heroButton text-lg">
@@ -76,4 +68,5 @@ export default function Hero({}: Props) {
       </div>
     </article>
   );
-}
+};
+export default Hero;

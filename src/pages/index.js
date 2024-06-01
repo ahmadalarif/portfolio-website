@@ -13,12 +13,13 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Navigation from "components/navigation";
 
-export const config = { unstable_runtimeJS: false}
 
-export default function Home() {
+export const config = { unstable_runtimeJS: false }
+
+export default function Home () {
 
   const { t } = useTranslation();
-  
+
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
       <Head>
@@ -31,12 +32,12 @@ export default function Home() {
           href="/images/ahmad-arif-headshot.webp"
         />
       </Head>
-      
+
 
       <Header />
       <section id="hero" className="snap-start">
-          <Navigation />
-  
+        <Navigation />
+
         <Hero />
       </section>
       <section id="about" className="snap-center">

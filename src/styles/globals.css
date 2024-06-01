@@ -29,7 +29,7 @@
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#FFE55C]/40 hover:text-[#FFE55C]/40;
   }
   .sectionHeading {
-    @apply mb-10 uppercase tracking-[1px] text-gray-500 text-2xl text-center;
+    @apply mb-14 uppercase tracking-[1px] text-gray-500 text-2xl text-center;
   }
   .contactInput {
     @apply outline-none bg-slate-400/10 rounded-sm border-b px-14 py-4 border-[#242424] text-[#F7AB0A] placeholder-gray-500 transition-all focus:border-[#F7AB0A] focus:text-[#F7AB0A] hover:border-[#F7AB0A] text-start;
@@ -50,6 +50,10 @@
 }
 .name-hover:hover + .phonetic-name {
   display: inline-block;
+}
+.aboutImage {
+  width: auto;
+  height: auto;
 }
  
 @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Cairo&display=swap');

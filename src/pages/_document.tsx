@@ -12,7 +12,7 @@ class MyDocument extends Document {
         dir={this.props.locale === "ar" ? "rtl" : "ltr"}
         lang={this.props.locale}
       >
-        <Head></Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

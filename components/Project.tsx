@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-i18next"; // Import the useTranslation hook
 
 type Props = {
   projectDemo: string;
@@ -28,7 +28,7 @@ export default function Project({
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       viewport={{ once: true }}
-      className="z-20 flex h-full w-screen flex-shrink-0 snap-center  flex-col items-center justify-start space-y-5 sm:px-20 md:px-40"
+      className="z-20 flex h-full w-screen flex-shrink-0 snap-center  flex-col items-center justify-start space-y-4 sm:px-20 md:px-44 "
     >
       <motion.a
         initial={{ y: -80, opacity: 0 }}
@@ -54,12 +54,10 @@ export default function Project({
         </span>{" "}
         {projectName}
       </h4>
-      <div className="projectTools mb-20 flex items-center space-x-4">
-        {projectTools}
-      </div>
-      <div className="max-w-[80vw] overflow-scroll text-lg scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+      <div className="projectTools flex items-center gap-4">{projectTools}</div>
+      <p className="max-w-[80vw] overflow-scroll text-sm scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
         {projectDescription}
-      </div>
+      </p>
     </motion.div>
   );
 }

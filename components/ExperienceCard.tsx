@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 import { FaGithub, FaReact, FaHtml5 } from "react-icons/fa";
 import { AiOutlineApi } from "react-icons/ai";
-import { IoIosMore, IoLogoCss3, IoLogoJavascript } from "react-icons/io";
+import { IoLogoCss3, IoLogoJavascript } from "react-icons/io";
 import {
   SiExpress,
   SiRubyonrails,
@@ -37,7 +37,7 @@ function ExperienceCard({}: Props) {
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
             className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-fit"
-            src="images/general-assembly-logo.png"
+            src="/images/general-assembly-logo.png"
             alt=""
           />
           <motion.img
@@ -49,7 +49,7 @@ function ExperienceCard({}: Props) {
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
             className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-fit"
-            src="images/misk-academy-seeklogo.png"
+            src="/images/misk-academy-seeklogo.png"
             alt=""
           />
         </div>

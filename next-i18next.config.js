@@ -9,3 +9,4 @@ module.exports = {
     localePath: path.resolve("./public/locales"),
   },
 };
+
