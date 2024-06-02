@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { appWithTranslation } from "next-i18next";
-import { Ubuntu,Tajawal } from "@next/font/google"
+import { Ubuntu,Tajawal } from "next/font/google"
 import { useRouter } from "next/router.js"
 
 const font1 = Ubuntu({
